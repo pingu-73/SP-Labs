@@ -1,12 +1,13 @@
 clc; clearvars; clear all;
-load('q1.mat'); 
-N = 5; MA = movingAverage(x, N); n = 1:length(x);
-
-figure;
-
-subplot(2,1,1); plot(n, x, 'b', 'LineWidth', 1.5);
-xlabel('n', 'FontSize', 15); ylabel('x[n]', 'FontSize', 15); title('Original Signal');
-
-subplot(2,1,2); plot(n, MA, 'r', 'LineWidth', 1.5);
-xlabel('n', 'FontSize', 15); ylabel('Trend', 'FontSize', 15); title('Trend (Moving Average)');
-sgtitle('Trend Analysis');
+load('q1.mat');
+n = -50:50;
+ind = [3 5 7 15 20 25];
+subplot(3,3,2); stem(n,x);
+xlabel('n'); ylabel('x[n]'); title('Original signal q1.mat')
+for k = 1:length(ind)
+    N = ind(k);
+    MA = movingAverage(N,x,n);
+    subplot(3,3,k+3);
+    stem(n,MA);
+    xlabel('n'); ylabel('y[n]'); title(['Output signal N=', num2str(N)]);
+end
