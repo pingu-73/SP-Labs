@@ -3,11 +3,11 @@ clc; clearvars; clear all;
 load('q2_1.mat'); load('q2_2.mat'); 
 
 
-M_values = [2, 3]; % Upsampling factors
+M_values = [2, 3]; 
 interpolation_methods = {'zero_order_hold', 'linear'};
 
 
-test_sequences = {x, x}; % Update variable names if necessary
+test_sequences = {x, x}; 
 
 figure;
 
